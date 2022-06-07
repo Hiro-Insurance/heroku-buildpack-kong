@@ -229,12 +229,13 @@ else
 fi
 export OPENSSL_DIR=${APP_PREFIX}
 # Install Kong itself from the cloned git repo
-topic "Installing forked kong-lapis"
-luarocks install --local https://raw.githubusercontent.com/Hiro-Insurance/heroku-buildpack-kong/master/kong-lapis-1.6.0.1-1.rockspec
-luarocks install --local https://raw.githubusercontent.com/Hiro-Insurance/heroku-buildpack-kong/master/lua-resty-cookie-0.1.0-1.rockspec
-luarocks install --local https://raw.githubusercontent.com/Hiro-Insurance/heroku-buildpack-kong/master/lua-resty-mlcache-2.2.0-1.rockspec
-luarocks install --local https://raw.githubusercontent.com/Hiro-Insurance/heroku-buildpack-kong/master/kong-plugin-serverless-functions-0.1.0-0.rockspec
-luarocks install --local https://raw.githubusercontent.com/Hiro-Insurance/heroku-buildpack-kong/master/kong-prometheus-plugin-0.1.0-2.rockspec
+topic "Configuring git to replace git protocol with https"
+git config --global url."https://".insteadOf git://
+# luarocks install --local https://raw.githubusercontent.com/Hiro-Insurance/heroku-buildpack-kong/master/kong-lapis-1.6.0.1-1.rockspec
+# luarocks install --local https://raw.githubusercontent.com/Hiro-Insurance/heroku-buildpack-kong/master/lua-resty-cookie-0.1.0-1.rockspec
+# luarocks install --local https://raw.githubusercontent.com/Hiro-Insurance/heroku-buildpack-kong/master/lua-resty-mlcache-2.2.0-1.rockspec
+# luarocks install --local https://raw.githubusercontent.com/Hiro-Insurance/heroku-buildpack-kong/master/kong-plugin-serverless-functions-0.1.0-0.rockspec
+# luarocks install --local https://raw.githubusercontent.com/Hiro-Insurance/heroku-buildpack-kong/master/kong-prometheus-plugin-0.1.0-2.rockspec
 luarocks make ./kong-*.rockspec
 # Install Kong's dependencies via LuaRocks
 # (`--local` is required for this to do anything)
