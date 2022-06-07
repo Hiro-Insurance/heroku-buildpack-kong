@@ -2,3 +2,4 @@ config/kong.yml
 config/cassandra.cert
 
 config/kong.conf.etlua
+*.DS_Store

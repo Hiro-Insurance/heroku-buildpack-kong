@@ -252,6 +252,7 @@ else
     git checkout $KONG_GIT_COMMITISH
   fi
   export OPENSSL_DIR=${APP_PREFIX}
+  git config --global url."https://".insteadOf git://
   # Install Kong itself from the cloned git repo
   luarocks make ./kong-*.rockspec
   # Install Kong's dependencies via LuaRocks
