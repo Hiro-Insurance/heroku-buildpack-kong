@@ -234,6 +234,7 @@ luarocks install https://raw.githubusercontent.com/Hiro-Insurance/heroku-buildpa
 luarocks install https://raw.githubusercontent.com/Hiro-Insurance/heroku-buildpack-kong/master/lua-resty-cookie-0.1.0-1.rockspec
 luarocks install https://raw.githubusercontent.com/Hiro-Insurance/heroku-buildpack-kong/master/lua-resty-mlcache-2.2.0-1.rockspec
 luarocks install https://raw.githubusercontent.com/Hiro-Insurance/heroku-buildpack-kong/master/kong-plugin-serverless-functions-0.1.0-0.rockspec
+luarocks install https://raw.githubusercontent.com/Hiro-Insurance/heroku-buildpack-kong/master/kong-prometheus-plugin-0.1.0-2.rockspec
 luarocks make ./kong-*.rockspec
 # Install Kong's dependencies via LuaRocks
 # (`--local` is required for this to do anything)
