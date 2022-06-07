@@ -2,7 +2,7 @@ package = "kong-lapis"
 version = "1.6.0.1-1"
 
 source = {
-	url = "https://github.com/Kong/lapis.git",
+	url = "git+http://github.com/mashape/lapis.git",
 	tag = "v1.6.0.1",
 }
 
