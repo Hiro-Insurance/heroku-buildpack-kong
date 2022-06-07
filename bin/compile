@@ -232,6 +232,7 @@ export OPENSSL_DIR=${APP_PREFIX}
 luarocks make ./kong-*.rockspec
 # Install Kong's dependencies via LuaRocks
 # (`--local` is required for this to do anything)
+luarocks install https://raw.githubusercontent.com/Hiro-Insurance/heroku-buildpack-kong/master/kong-lapis-1.6.0.1-1.rockspec
 luarocks install --local ./kong-*.rockspec
 mv bin/* ${APP_PREFIX}/bin/
 
